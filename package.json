@@ -1,11 +1,11 @@
 {
   "name": "ejs-electron",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A lightweight, configurable module that allows ejs templating in an electronJS app.",
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "ejs": "2.3.4"
+    "ejs": "2.4.1"
   },
   "keywords": [
     "electron",
