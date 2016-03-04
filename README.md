@@ -1,15 +1,14 @@
 # ejs-electron
-##### 0.2.0
 
 A mega lightweight, completely flexible module that allows ejs templating in an electronJS app.
 
-Makes use of the electronJS `protocol` module to supply a custom handle for the `file://` protocol.  This handler intercepts all file requests, compiles any requested `.ejs` files, and serves the result.
+Makes use of the electronJS `protocol` module to supply a custom handler for the `file://` protocol.  This handler intercepts all file requests, compiles any requested `.ejs` files, and serves the result.
 
 ___
 
 ## Installation
 
-To install using `npm`:
+Install using [npm](https://www.npmjs.com/package/ejs-electron):
 
 ```
 $ npm install ejs-electron
@@ -23,7 +22,7 @@ ___
 var ejse = require('ejs-electron');
 ```
 
-This will initialize the module and return an instance of EJSE.  This object's methods are as follows:
+This will initialize the module and return an object that is an instance of EJSE.  This object's methods are as follows:
 
 ### Methods
 
@@ -82,7 +81,7 @@ You can, of course, chain `setOptions()` to the `require()` call:
 var ejse = require('ejs-electron').setOptions(opts);
 ```
 
-An example setting config:
+An example of setting the config:
 
 ```
 var ejse = require('ejs-electron')
@@ -106,7 +105,7 @@ Also, of course, feel free to fork and pull request.  Happy coding!
 ## License
 (The MIT License)
 
-Copyright (c) 2016 Joshua Claunch (bowheart)
+Copyright (c) 2016 Joshua Claunch (bowheart) <kingdomdance602@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
