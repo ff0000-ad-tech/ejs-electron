@@ -31,7 +31,7 @@ EJSE.prototype = {
     
     // Start intercepting requests, looking for '.ejs' files.
     listen: function() {
-        if (!protocol) return
+        if (!protocol) return this
         var self = this
         
         protocol.interceptStringProtocol('file', function(request, callback) {
@@ -65,7 +65,7 @@ EJSE.prototype = {
     
     // Stop intercepting requests, restoring the original `file://` protocol handler.
     stopListening: function() {
-        if (!protocol) return
+        if (!protocol) return this
         
         protocol.uninterceptProtocol('file')
         return this
