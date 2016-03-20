@@ -1,5 +1,8 @@
 # ejs-electron
 
+[![npm](https://img.shields.io/npm/v/ejs-electron.svg)](https://www.npmjs.com/package/ejs-electron)
+[![npm](https://img.shields.io/npm/dt/ejs-electron.svg)](https://www.npmjs.com/package/ejs-electron)
+
 A mega lightweight, completely flexible module that allows ejs templating in an electronJS app.
 
 Makes use of the electronJS `protocol` module to supply a custom handler for the `file://` protocol.  This handler intercepts all file requests, compiles any requested `.ejs` files, and serves the result.
@@ -36,7 +39,7 @@ Supply custom config for `ejs-electron`.
 
 Currently the only config option is:
 
-- verbose -- *bool* -- Whether or not `ejs-electron` should generate console messages if it intercepts a request for a non-existent file.  By default, `ejs-electron` will fail silently, which may not be ideal for development environments.  *default: **false***
+- verbose -- *bool* -- Whether or not `ejs-electron` should generate console messages if it intercepts a request for a non-existent file.  By default, `ejs-electron` will fail silently, which may not be ideal for development environments.  *default: false*
 
 #### setOptions(options)
 
@@ -92,7 +95,7 @@ var ejse = require('ejs-electron')
 ##### index.ejs
 
 ```
-<h1>Hello, World!</hz>
+<h1>Hello, World!</h1>
 <% ejse.stopListening(); %>
 ```
 
