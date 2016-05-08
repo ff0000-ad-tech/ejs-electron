@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "ejs": "2.4.1"
+    "ejs": "2.4.1",
+    "mime": "1.3.4"
   },
   "bugs": {
     "url": "https://github.com/bowheart/ejs-electron/issues"
