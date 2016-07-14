@@ -21,15 +21,25 @@ ___
 
 ## Usage
 
-```javascript
+```
 var ejse = require('ejs-electron');
 ```
 
-This will initialize the module and return an instance of EJSE.  This object's methods are as follows:
+This will initialize the module and return an object that is an instance of EJSE.  This object's methods are as follows:
 
-### Method API
+### Methods
 
 (All methods return the same EJSE instance for chaining.  The EJSE instance will also be made available in the scope of your `.ejs` files via the variable `ejse`, allowing you to `setOptions()` and `stopListening()` there as well).
+
+#### config(conf)
+
+Supply custom config for `ejs-electron`.
+
+- conf -- *object* -- The config options to override and their new values.
+
+Currently the only config option is:
+
+- verbose -- *bool* -- Whether or not `ejs-electron` should generate console messages if it intercepts a request for a non-existent file.  By default, `ejs-electron` will fail silently, which may not be ideal for development environments.  *default: false*
 
 #### setOptions(options)
 
@@ -53,7 +63,7 @@ A simple electron app with `ejs-electron` could look like this:
 
 ##### main.js
 
-```javascript
+```
 var electron = require('electron'),
     app = electron.app,
     ejse = require('ejs-electron');
@@ -70,23 +80,28 @@ app.on('ready', function() {
 
 You can, of course, chain `setOptions()` to the `require()` call:
 
-```javascript
+```
 var ejse = require('ejs-electron').setOptions(opts);
+```
+
+An example of setting the config:
+
+```
+var ejse = require('ejs-electron')
+    .config({ verbose: true })
+    .setOptions({ opt: 'val' });
 ```
 
 ##### index.ejs
 
-```html
+```
 <h1>Hello, World!</h1>
-<p>The value of `opt` is: <%= opt %></p>
 <% ejse.stopListening(); %>
 ```
 
 ## Issues
 
 Issues may be submitted at https://github.com/bowheart/ejs-electron/issues
-
-Thanks to all who have submitted issues.  The feedback has been extremely helpful.
 
 Also, of course, feel free to fork and pull request.  Happy coding!
 
